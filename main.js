@@ -1,24 +1,61 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "aos/dist/aos.css"
+import "bulma/css/bulma.min.css"
+import "./style.scss"
+import "@fancyapps/ui/dist/carousel/carousel.css"
+import "@fancyapps/ui/dist/carousel/carousel.autoplay.css"
+import {Carousel} from "@fancyapps/ui"
+import {Autoplay} from "@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js"
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+document.addEventListener("DOMContentLoaded", () => {
+    setBurger()
+    stickyMenu()
+    mainCarousel()
+})
+
+const mainCarousel = () => {
+
+    const container = document.getElementById("mainCarousel")
+    if (container) {
+        new Carousel(
+            container,
+            {
+                infinite: true,
+                Dots: false,
+                transition: "crossfade",
+                Navigation: false,
+                Autoplay: {
+                    timeout: 4000,
+                    pauseOnHover: false,
+                    showProgress: false
+                }
+            },
+            { Autoplay }
+        )
+    }
+
+}
+
+const setBurger = () => {
+    const burger = document.querySelector(".navbar-burger")
+    if (burger) {
+        const menu = document.querySelector(".navbar-menu")
+        burger.addEventListener("click", () => {
+            burger.classList.toggle("is-active")
+            menu.classList.toggle("is-active")
+        })
+    }
+}
+
+const stickyMenu = () => {
+    const navbar = document.querySelector(".navbar")
+    if (navbar) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add("nav-smaller")
+            } else {
+                navbar.classList.remove("nav-smaller")
+            }
+        })
+    }
+}

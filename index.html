@@ -1,13 +1,66 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <script src="https://kit.fontawesome.com/297fb69a4d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!--HEADER-->
+<header>
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="logo navbar-item has-text-weight-bold is-size-5-touch is-size-4-desktop" href="/">
+                T<span class="has-text-primary">K</span>
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+               data-target="navigation">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navigation" class="navbar-menu ">
+            <div class="navbar-end has-background-black-20">
+                <a href="index.html" class="navbar-item">Домой</a>
+                <a href="about.html" class="navbar-item">Обо мне</a>
+                <a href="blog.html" class="navbar-item">Портфолио</a>
+                <a href="portfolio.html" class="navbar-item">Услуги</a>
+                <a href="contact.html" class="navbar-item">Как связаться?</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--HERO-->
+<section class="hero is-large main-hero">
+    <div class="f-carousel" id="mainCarousel">
+        <div class="f-carousel__slide"><img alt="slide1" src="/images/b1.jpg"/></div>
+        <div class="f-carousel__slide"><img alt="slide1" src="/images/b2.jpg"/></div>
+        <div class="f-carousel__slide"><img alt="slide1" src="/images/b3.jpg"/></div>
+        <div class="f-carousel__slide"><img alt="slide1" src="/images/b4.jpg"/></div>
+    </div>
+
+    <div class="hero-body">
+        <p class="title">Томас Каблис</p>
+        <p class="subtitle">дизайнер жилых пространств</p>
+    </div>
+    <!-- social icon -->
+    <div class="list list-hero-social">
+        <a class="list-item has-text-white" href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a class="list-item has-text-white" href="#"><i class="fa-brands fa-telegram"></i></a>
+        <a class="list-item has-text-white" href="#"><i class="fa-brands fa-vk"></i></a>
+        <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
+    </div>
+    <!-- /social icon -->
+</section>
+
+
+<script type="module" src="/main.js"></script>
+</body>
 </html>
