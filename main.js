@@ -1,6 +1,9 @@
 import "aos/dist/aos.css"
-import "bulma/css/bulma.min.css"
-import "./style.scss"
+import "./fonts.scss"
+import "bulma/bulma.scss"
+import "./main.scss"
+
+
 import "@fancyapps/ui/dist/carousel/carousel.css"
 import "@fancyapps/ui/dist/carousel/carousel.autoplay.css"
 import {Carousel} from "@fancyapps/ui"
@@ -30,7 +33,7 @@ const mainCarousel = () => {
                     showProgress: false
                 }
             },
-            { Autoplay }
+            {Autoplay}
         )
     }
 
