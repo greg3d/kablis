@@ -37,6 +37,22 @@ const mainCarousel = () => {
         )
     }
 
+    const reviews = document.getElementById("reviews")
+
+    if (reviews) {
+        new Carousel(reviews, {
+            infinite: true,
+            Dots: false,
+            transition: "crossfade",
+            Navigation: true,
+            Autoplay: {
+                timeout: 2000,
+                pauseOnHover: true,
+                showProgress: false,
+            },
+        }, {Autoplay})
+    }
+
 }
 
 const setBurger = () => {

@@ -8,123 +8,177 @@ $primaryLight: lighten($primary, 15);
 
 $side: 1rem;
 $sideTablet: 1.5rem;
-$sideDesktop: 2rem;
-$sideWidescreen: 3rem;
+$sideDesktop: 3rem;
+$sideWidescreen: 6rem;
+$top: 3rem;
 
 
 body {
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .logo {
-  background: $primaryDark !important;
-  padding: 0.75rem 1rem;
+    background: $primaryDark !important;
+    padding: 0.75rem 1rem;
+
+    span {
+        color: $primary;
+    }
+
+    &:hover {
+        color: $warning !important;
+    }
+
+    &:hover span {
+        color: $danger !important;
+    }
+
 }
 
 .navbar {
-  padding: 1rem $side;
-
-  @include tablet {
-    padding: 3rem $sideTablet;
-  }
-
-  @include desktop {
-    padding: 3rem $sideDesktop;
-  }
-
-  @include widescreen {
-    padding: 3rem $sideWidescreen;
-  }
-
-  transition: 300ms ease;
-  background: transparent !important;
-
-  .navbar-end {
-    padding: 0 0.75rem;
-    background: $primaryDarkTrans;
-  }
-
-  .navbar-item {
-    &:hover {
-      color: $dark;
-      background: $grey-lightest;
-    }
-  }
-}
-
-.navbar.nav-smaller {
-  background: $primaryDark !important;
-  padding: 1rem 2rem;
-}
-
-.main-hero {
-  position: relative;
-
-  .hero-body2 {
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-direction: column;
-    align-items: flex-start;
-
-    padding: 8rem $side 6rem;
+    padding: 1rem $side;
 
     @include tablet {
-      padding: 18rem $sideTablet 12rem;
+        padding: $top $sideTablet;
     }
 
     @include desktop {
-      padding: 18rem $sideDesktop 12rem;
+        padding: $top $sideDesktop;
     }
 
     @include widescreen {
-      padding: 18rem $sideWidescreen 12rem;
+        padding: $top $sideWidescreen;
     }
 
-  }
+    transition: 300ms ease;
+    background: transparent !important;
 
-  .title {
-    font-size: 2rem;
+    .navbar-end {
+        padding: 0 0.75rem;
+        background: $primaryDarkTrans;
+    }
+
+    .navbar-item {
+        &:hover {
+            color: $dark;
+            background: $grey-lightest;
+        }
+    }
+}
+
+.navbar.nav-smaller {
+    background: $primaryDark !important;
+    padding: 1rem 2rem;
+}
+
+.list-hero-social {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    font-size: 1rem;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    background: transparentize($black, 0.6);
+    padding: 0 1rem 1.5rem;
 
     @include tablet {
-      font-size: 4rem;
+        //right: $sideTablet;
+        font-size: 1.0rem;
+        line-height: 1.0rem;
+    }
+    @include desktop {
+        font-size: 1.0rem;
+        //right: $sideDesktop;
+    }
+    @include widescreen {
+        font-size: 1.5rem;
+        //right: $sideWidescreen;
     }
 
-    padding: 0.5rem 1rem;
-    color: white;
-    background: $primaryDarkTrans;
-  }
 
-  .subtitle {
-    font-size: 0.75rem;
-    line-height: 0.75rem;
-    padding: 0 0.5rem 0.5rem;
-
-    @include tablet {
-      font-size: 1rem;
-      line-height: 1rem;
-      padding: 0 1rem 1rem;
+    .list-item:hover {
+        color: $warning !important;
     }
 
-    color: $primaryLight;
-    background: $primaryDarkTrans;
-  }
+}
+
+.main-hero {
+    position: relative;
+
+    .hero-body2 {
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 8rem $side 6rem;
+
+        @include tablet {
+            padding: 18rem $sideTablet 12rem;
+        }
+
+        @include desktop {
+            padding: 18rem $sideDesktop 12rem;
+        }
+
+        @include widescreen {
+            padding: 21rem $sideWidescreen 21rem;
+        }
+
+    }
+
+    .title {
+        font-size: 2rem;
+
+        @include tablet {
+            font-size: 4rem;
+        }
+
+        padding: 0.5rem 1rem;
+        color: white;
+        background: $primaryDark;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+        padding: 0 0.5rem 0.5rem;
+
+        @include tablet {
+            font-size: 1rem;
+            line-height: 1rem;
+            padding: 0.5rem 1rem 1rem;
+        }
+
+        color: $light;
+        background: $primaryDark;
+    }
 }
 
 #mainCarousel {
 
-  pointer-events: none;
-
-  .f-carousel__slide {
     pointer-events: none;
-    background-position: center center;
-    background-size: cover;
-  }
 
-  background-color: var(--bulma-primary-20);
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    .f-carousel__slide {
+        pointer-events: none;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    background-color: var(--bulma-primary-20);
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
