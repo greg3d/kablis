@@ -3,56 +3,42 @@ import "./fonts.scss"
 import "bulma/bulma.scss"
 import "./main.scss"
 
-
-import "@fancyapps/ui/dist/carousel/carousel.css"
-import "@fancyapps/ui/dist/carousel/carousel.autoplay.css"
-import {Carousel} from "@fancyapps/ui"
-import {Autoplay} from "@fancyapps/ui/dist/carousel/carousel.autoplay.esm.js"
+// import Swiper JS
+import Swiper from 'swiper';
+import Rellax from 'rellax';
+import {Autoplay, EffectFade} from 'swiper/modules'
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 
 
 document.addEventListener("DOMContentLoaded", () => {
     setBurger()
     stickyMenu()
     mainCarousel()
+    effects()
 })
 
+const effects = () => {
+    new Rellax('.parallaxed');
+}
+
 const mainCarousel = () => {
-
-    const container = document.getElementById("mainCarousel")
-    if (container) {
-        new Carousel(
-            container,
-            {
-                infinite: true,
-                Dots: false,
-                transition: "crossfade",
-                Navigation: false,
-                Autoplay: {
-                    timeout: 4000,
-                    pauseOnHover: false,
-                    showProgress: false
-                }
-            },
-            {Autoplay}
-        )
-    }
-
-    const reviews = document.getElementById("reviews")
-
-    if (reviews) {
-        new Carousel(reviews, {
-            infinite: true,
-            Dots: false,
-            transition: "crossfade",
-            Navigation: true,
-            Autoplay: {
-                timeout: 2000,
-                pauseOnHover: true,
-                showProgress: false,
-            },
-        }, {Autoplay})
-    }
-
+    const swiper = new Swiper('.carousel', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        modules: [Autoplay, EffectFade],
+        pagination: false,
+        navigation: false,
+        effect: "fade",
+        speed: 5000,
+        autoplay: {
+            delay: 4000,
+            pauseOnMouseEnter: false,
+            disableOnInteraction: false,
+        }
+    });
 }
 
 const setBurger = () => {
