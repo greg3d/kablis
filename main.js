@@ -37,7 +37,7 @@ const carousels = () => {
         effect: "fade",
         speed: 5000,
         autoplay: {
-            delay: 3000,
+            delay: 2000,
             pauseOnMouseEnter: false,
             disableOnInteraction: false,
         }

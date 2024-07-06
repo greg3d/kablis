@@ -166,13 +166,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fancyapps/ui@npm:^5.0.36":
-  version: 5.0.36
-  resolution: "@fancyapps/ui@npm:5.0.36"
-  checksum: 10c0/7c280359d417cf6cb056f531874c9ba8a3cca78f093719e76f0ca5d0b814ebd2f3ab0c8fcd8a69043738ecc3bf04715cec183528992dce52fda2998cdb86ee41
-  languageName: node
-  linkType: hard
-
 "@isaacs/cliui@npm:^8.0.2":
   version: 8.0.2
   resolution: "@isaacs/cliui@npm:8.0.2"
@@ -933,7 +926,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "kablis@workspace:."
   dependencies:
-    "@fancyapps/ui": "npm:^5.0.36"
     aos: "npm:^2.3.4"
     bulma: "npm:^1.0.0"
     bulma-pricingtable: "npm:^0.2.0"

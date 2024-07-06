@@ -13,7 +13,6 @@
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
     "aos": "^2.3.4",
     "bulma": "^1.0.0",
     "bulma-pricingtable": "^0.2.0",

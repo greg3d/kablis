@@ -39,6 +39,19 @@ body {
   scroll-behavior: smooth;
 }
 
+a {
+  &:link {
+    color: $sunset;
+    text-decoration: underline transparentize($sunset, 0.7) 1px;
+  }
+  &:visited {
+    color: $sunset;
+  }
+  &:hover {
+    color: $white;
+  }
+}
+
 .logo {
   background: $primaryDark !important;
   padding: 0.75rem 1rem;
@@ -81,9 +94,16 @@ body {
   }
 
   .navbar-item {
+    color: $white;
+    text-decoration: underline dotted 1px transparentize($white, 0.4);
+    &:link {
+      text-decoration: underline dotted 1px transparentize($white, 0.4);
+    }
+
     &:hover {
       color: $dark;
       background: $grey-lightest;
+      text-decoration: none;
     }
   }
 }
@@ -108,6 +128,7 @@ body {
   a {
 
     text-shadow: $primaryTextShadow;
+    text-decoration: none;
 
     &:link, &:visited {
       color: white;
@@ -395,6 +416,10 @@ body {
   background-color: $primaryDark;
   color: $primaryLight;
   padding: 0 $side 0;
+
+  &:nth-child(even) {
+    background-color: darken($primaryDark, 3);
+  }
 
   h2 {
     font-family: $family-secondary;
