@@ -22,6 +22,7 @@
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
@@ -38,7 +39,7 @@
         <!-- /social icon -->
 
         <div class="phone">
-            <a href="#"><span class="icon"><i class="fa-solid fa-mobile"></i></span>+7 <span class="code">960</span>
+            <a href="#"><span class="icon is-hidden-desktop-only"><i class="fa-solid fa-mobile"></i></span>+7 <span class="code">960</span>
                 <span class="numbers">830-15-15</span></a>
         </div>
 
@@ -182,7 +183,8 @@
 </section>
 
 <section class="black-section tomas" id="about">
-    <div class="avatar" data-aos="fade-right">
+    <div class="background"></div>
+    <div class="avatar">
         <figure class="image is-256x256-mobile is-256x256-tablet is-128x128-desktop">
             <img class="is-rounded" src="/images/tomas.jpg"/>
         </figure>
@@ -339,20 +341,27 @@
             </article>
         </div>
         <div class="column">
-            <form id="form" action="[[~[[*id]]]]" method="post">
+            <form data-theme="dark" id="form" action="[[~[[*id]]]]" method="post">
                 <input type="hidden" name="nospam" value=""/>
                 <input id="type" type="hidden" value=""/>
                 <div class="field">
                     <label class="label">Представьтесь, пожалуйста:</label>
-                    <div class="control has-icons-left has-icons-right"><input class="input is-medium" name="name"
-                                                                               type="text"
-                                                                               placeholder="Ваше имя"/><span
-                            class="icon is-small is-left"><i class="fas fa-user"></i></span><span
-                            class="icon is-small is-right is-success"><i class="fas fa-check"></i></span><span
-                            class="icon is-small is-right is-danger"><i class="fas fa-exclamation-triangle"></i></span>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input is-medium"
+                               name="name"
+                               type="text"
+                               placeholder="Ваше имя"/>
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <span class="icon is-small is-right is-success">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="icon is-small is-right is-danger">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </span>
                     </div>
-                    <p
-                            class="help is-danger">[[!+fi.error.name]]</p>
+                    <p class="help is-danger">[[!+fi.error.name]]</p>
                 </div>
                 <div class="field is-horizontal">
                     <div class="field-body">
@@ -409,7 +418,7 @@
                 </div>
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-large is-black is-outlined" id="sendform" type="submit">Отправить
+                        <button class="button is-large is-primary" id="sendform" type="submit">Отправить
                         </button>
                     </div>
                 </div>
